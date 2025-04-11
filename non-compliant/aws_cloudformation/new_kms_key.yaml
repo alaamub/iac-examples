@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create a new KMS key for encryption
+Resources:
+  MyKMSKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: "My KMS Key for encryption"

@@ -1,0 +1,11 @@
+apiVersion: s3.services.k8s.aws/v1alpha1
+kind: Bucket
+metadata:
+  name: encrypted-bucket
+spec:
+  bucketName: encrypted-bucket
+  bucketEncryption:
+    serverSideEncryptionConfiguration:
+      - serverSideEncryptionByDefault:
+          sseAlgorithm: aws:kms
+          kmsMasterKeyID: "arn:aws:kms:region:account-id:key/key-id"

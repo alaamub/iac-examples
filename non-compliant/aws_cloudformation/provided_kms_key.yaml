@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: S3 bucket using a provided KMS key ARN for encryption
+Parameters:
+  ProvidedKMSKeyArn:
+    Type: String
+    Description: ARN of the provided KMS Key
+Resources:
+  EncryptedBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: encrypted-bucket

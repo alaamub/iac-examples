@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Route 53 hosted zone with DNSSEC enabled
+Resources:
+  MyHostedZone:
+    Type: AWS::Route53::HostedZone
+    Properties:
+      Name: example.com

@@ -1,0 +1,6 @@
+apiVersion: route53.services.k8s.aws/v1alpha1
+kind: HostedZone
+metadata:
+  name: example-hosted-zone
+spec:
+  name: example.com

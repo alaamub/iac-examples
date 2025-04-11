@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: S3 bucket with server access logging enabled
+Resources:
+  CentralLoggingBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: central-logging-bucket
+  SourceBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: source-bucket
+      LoggingConfiguration:
+        DestinationBucketName: !Ref CentralLoggingBucket
+        LogFilePrefix: "source-bucket-logs/"
